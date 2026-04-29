@@ -1,0 +1,291 @@
+/* ============================================================
+   MOBILE.CSS — all responsive overrides in one place
+   Imported once in App.js
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* ── NAVBAR ── */
+  .navbar-inner {
+    padding: 14px 20px;
+  }
+  .nav-links {
+    display: none !important;
+  }
+  .burger {
+    display: flex !important;
+  }
+  .mobile-menu {
+    display: flex !important;
+  }
+  .nav-logo {
+    height: 38px;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 50vh;
+  }
+  .hero-name {
+    font-size: 42px !important;
+    letter-spacing: 8px !important;
+  }
+  .hero-eyebrow {
+    font-size: 8px !important;
+    letter-spacing: 4px !important;
+    padding: 0 20px;
+    text-align: center;
+  }
+  .hero-tagline {
+    font-size: 15px !important;
+    padding: 0 20px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px !important;
+    padding: 0 30px;
+    width: 100%;
+  }
+  .hero-ctas .btn-gold,
+  .hero-ctas .btn-outline-gold {
+    width: 100%;
+    text-align: center;
+  }
+  .deco-corner {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .deco-corner.tl, .deco-corner.bl { left: 16px !important; }
+  .deco-corner.tr, .deco-corner.br { right: 16px !important; }
+  .deco-corner.tl, .deco-corner.tr { top: 70px !important; }
+
+  /* ── SIGNATURE NIGHTS (TopEvents) ── */
+  .te-section {
+    padding: 70px 0 80px;
+  }
+  .te-header {
+    padding: 0 20px 36px !important;
+  }
+  .te-track {
+    padding: 0 20px !important;
+    gap: 16px !important;
+  }
+  .te-poster {
+    flex: 0 0 260px !important;
+    width: 260px !important;
+  }
+  .te-poster-img {
+    height: 180px !important;
+  }
+  .te-poster-title-main {
+    font-size: 36px !important;
+  }
+  .te-poster-title-italic {
+    font-size: 30px !important;
+  }
+  .te-poster-body {
+    padding: 16px 18px 16px !important;
+    gap: 8px !important;
+  }
+
+  /* ── EXPLORE THE SPACE (About/Rooms) ── */
+  .about {
+    padding: 70px 0 0 !important;
+  }
+  .about-header {
+    padding: 0 20px 36px !important;
+  }
+  .rooms-grid {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+  .room-panel {
+    height: 380px !important;
+  }
+  .room-content-bottom {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  .room-name {
+    font-size: 32px !important;
+  }
+  .room-content {
+    padding: 20px !important;
+  }
+  .room-desc {
+    font-size: 12px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* ── WEEKLY SPECIALS (Promos) ── */
+  .promos {
+    padding: 70px 20px !important;
+  }
+  .promos-header {
+    margin-bottom: 36px !important;
+  }
+  .promos-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3px !important;
+  }
+  .promo-card {
+    min-height: 320px !important;
+  }
+  .promo-title {
+    font-size: 30px !important;
+  }
+  .promo-content {
+    padding: 24px !important;
+  }
+
+  /* ── GALLERY ── */
+  .gallery {
+    padding: 70px 0 !important;
+  }
+  .gallery-header {
+    padding: 0 20px 36px !important;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  .gallery-item {
+    height: 160px !important;
+  }
+  .gallery-item.wide {
+    grid-column: span 2 !important;
+    height: 200px !important;
+  }
+  .gallery-ig-banner {
+    padding: 0 20px !important;
+    margin-top: 24px !important;
+  }
+
+  /* ── HOURS & LOCATION ── */
+  .hours {
+    grid-template-columns: 1fr !important;
+    padding: 70px 20px !important;
+    gap: 48px !important;
+  }
+  .location-map {
+    height: 220px !important;
+  }
+  .hours-table td {
+    font-size: 12px !important;
+  }
+
+  /* ── PRIVATE EVENTS FORM ── */
+  .pe-section {
+    padding: 70px 20px !important;
+  }
+  .pe-row.two {
+    grid-template-columns: 1fr !important;
+  }
+  .pe-form-section-title {
+    font-size: 10px !important;
+    letter-spacing: 3px !important;
+    margin: 32px 0 18px !important;
+  }
+
+  /* ── FOOTER ── */
+  .footer-cta-banner {
+    flex-direction: column !important;
+    padding: 40px 20px !important;
+    gap: 24px !important;
+  }
+  .footer-cta-title {
+    font-size: 28px !important;
+  }
+  .footer-cta-actions {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .footer-cta-actions .btn-gold,
+  .footer-cta-actions .btn-outline-gold {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 48px 20px !important;
+    gap: 36px !important;
+  }
+  .footer-bottom {
+    padding: 20px !important;
+    flex-direction: column !important;
+    text-align: center;
+    gap: 8px !important;
+  }
+  .footer-logo {
+    height: 52px !important;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-size: 32px !important;
+  }
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* ── CALENDAR MODAL ── */
+  .ecm-modal {
+    max-height: 95vh;
+  }
+  .ecm-body {
+    grid-template-columns: 1fr !important;
+  }
+  .ecm-cal {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(196,154,60,0.12);
+    padding: 20px !important;
+  }
+  .ecm-header {
+    padding: 20px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .ecm-header-legend {
+    display: none !important;
+  }
+  .ecm-detail-date {
+    padding: 16px 20px 12px !important;
+  }
+  .ecm-events-list {
+    padding: 12px 20px 0 !important;
+  }
+  .ecm-detail-cta {
+    padding: 16px 20px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .ecm-footer {
+    padding: 20px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  .ecm-cell-num {
+    font-size: 11px !important;
+  }
+}
+
+/* ── Small phones ── */
+@media (max-width: 390px) {
+  .hero-name {
+    font-size: 34px !important;
+    letter-spacing: 5px !important;
+  }
+  .te-poster {
+    flex: 0 0 230px !important;
+    width: 230px !important;
+  }
+  .footer-main {
+    grid-template-columns: 1fr !important;
+  }
+}

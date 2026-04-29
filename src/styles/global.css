@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600;900&family=Raleway:wght@200;300;400;500&display=swap');
+
+:root {
+  --gold:         #7C5200;
+  --gold-mid:     #A86E00;
+  --gold-light:   #C49A3C;
+  --gold-bright:  #E8BE6A;
+  --burgundy:     #6B0F1A;
+  --burgundy-lt:  #9B1F2E;
+  --black:        #060608;
+  --black-soft:   #0C0C10;
+  --black-card:   #111117;
+  --white:        #F5EDD8;
+  --white-dim:    rgba(245,237,216,0.72);
+  --white-faint:  rgba(245,237,216,0.18);
+  --border:       rgba(196,154,60,0.22);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* ── Selection ── */
+::selection { background: var(--gold); color: var(--white); }
+
+/* ── Utility ── */
+.cinzel { font-family: 'Cinzel', serif; }
+.cormorant { font-family: 'Cormorant Garamond', serif; }
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold-bright);
+}
+
+.deco-line {
+  width: 52px;
+  height: 1px;
+  background: linear-gradient(to right, var(--gold-light), transparent);
+  margin: 22px 0;
+}
+
+.btn-gold {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 36px;
+  background: var(--gold);
+  color: var(--white);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+  outline: none;
+}
+
+.btn-gold:hover {
+  background: var(--gold-mid);
+  border-color: var(--gold-mid);
+}
+
+.btn-outline-gold {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 36px;
+  background: transparent;
+  color: var(--gold-bright);
+  border: 1px solid rgba(196,154,60,0.45);
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.btn-outline-gold:hover {
+  border-color: var(--gold-bright);
+  color: var(--white);
+  background: rgba(196,154,60,0.1);
+}

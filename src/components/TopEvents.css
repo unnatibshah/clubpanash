@@ -1,0 +1,213 @@
+/* ─── Section ─── */
+.te-section {
+  background: var(--black);
+  padding: 100px 0 110px;
+  overflow: hidden;
+}
+
+.te-header {
+  padding: 0 80px 56px;
+  max-width: 600px;
+}
+
+/* ─── Scrolling viewport ─── */
+.te-viewport {
+  position: relative;
+  overflow: hidden;
+  padding: 12px 0 28px;
+  cursor: grab;
+}
+.te-viewport:active { cursor: grabbing; }
+
+/* ─── Track ─── */
+.te-track {
+  display: flex;
+  gap: 24px;
+  padding: 0 80px;
+  will-change: transform;
+  width: max-content;
+}
+
+/* ─── Poster card ─── */
+.te-poster {
+  position: relative;
+  flex: 0 0 340px;
+  width: 340px;
+  border-radius: 0;
+  overflow: hidden;
+  background: var(--black-card);
+  border: 1px solid rgba(196,154,60,0.15);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.4s;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.te-poster:hover {
+  transform: translateY(-10px) scale(1.015);
+  border-color: rgba(196,154,60,0.45);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.7), 0 0 30px rgba(124,82,0,0.15);
+}
+
+/* ─── Photo ─── */
+.te-poster-img {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.te-poster-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  filter: brightness(0.75) saturate(0.82);
+}
+.te-poster:hover .te-poster-img img {
+  transform: scale(1.07);
+  filter: brightness(0.88) saturate(1);
+}
+.te-poster-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    transparent 50%,
+    rgba(6,6,8,0.85) 100%
+  );
+}
+
+/* ─── Badge ─── */
+.te-badge {
+  position: absolute;
+  top: 18px; left: 18px;
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px; letter-spacing: 4px; text-transform: uppercase;
+  padding: 5px 12px;
+  z-index: 2;
+}
+.te-badge-gold     { background: var(--gold);     color: #fff; }
+.te-badge-burgundy { background: var(--burgundy); color: #fff; }
+
+/* ─── Poster body ─── */
+.te-poster-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 26px 22px;
+}
+
+.te-poster-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 8.5px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+/* Two-line title: upright + italic */
+.te-poster-title-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0px;
+}
+.te-poster-title-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px; font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--white);
+  line-height: 1;
+}
+.te-poster-title-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 44px; font-weight: 300; font-style: italic;
+  letter-spacing: 1px;
+  color: var(--gold-bright);
+  line-height: 1;
+  margin-top: -4px;
+}
+
+.te-poster-subtitle {
+  font-size: 12.5px;
+  color: var(--white-dim);
+  line-height: 1.6;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+}
+
+.te-poster-divider {
+  width: 36px; height: 1px;
+  background: linear-gradient(to right, var(--gold-light), transparent);
+}
+
+
+
+/* ─── Footer: time + cta ─── */
+.te-poster-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(196,154,60,0.12);
+}
+
+.te-poster-time {
+  display: flex; flex-direction: column; gap: 2px;
+}
+.te-time-label {
+  font-family: 'Cinzel', serif;
+  font-size: 7.5px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(245,237,216,0.3);
+}
+.te-time-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px; font-style: italic;
+  color: var(--gold-bright);
+}
+
+.te-poster-cta {
+  font-family: 'Cinzel', serif;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-bright);
+  background: none;
+  border: 1px solid rgba(196,154,60,0.35);
+  padding: 9px 18px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.te-poster-cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+/* ─── Bottom accent line (colour per poster) ─── */
+.te-poster-bottom-line {
+  height: 3px;
+  flex-shrink: 0;
+}
+.te-poster-gold     .te-poster-bottom-line { background: var(--gold); }
+.te-poster-burgundy .te-poster-bottom-line { background: var(--burgundy); }
+
+/* ─── Fade edges ─── */
+.te-fade {
+  position: absolute; top: 0; bottom: 0;
+  width: 100px; z-index: 10; pointer-events: none;
+}
+.te-fade-left  {
+  left: 0;
+  background: linear-gradient(to right, var(--black) 0%, transparent 100%);
+}
+.te-fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--black) 0%, transparent 100%);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .te-header  { padding: 0 28px 44px; }
+  .te-track   { padding: 0 28px; gap: 16px; }
+  .te-poster  { flex: 0 0 280px; width: 280px; }
+  .te-poster-img { height: 200px; }
+  .te-poster-title-main   { font-size: 42px; }
+  .te-poster-title-italic { font-size: 36px; }
+  .te-section { padding: 72px 0 80px; }
+}

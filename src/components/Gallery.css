@@ -1,0 +1,120 @@
+.gallery {
+  background: var(--black-soft);
+  padding: 110px 0;
+}
+
+.gallery-header {
+  padding: 0 80px 52px;
+}
+
+.gallery-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(196,154,60,0.5);
+  margin-top: -10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 280px 280px;
+  gap: 3px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--black-card);
+}
+.gallery-item.wide { grid-column: span 2; }
+
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease, filter 0.5s;
+  filter: brightness(0.78) saturate(0.8);
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.95) saturate(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute; inset: 0;
+  background: rgba(6,6,8,0.35);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-item:hover .gallery-item-overlay { opacity: 1; }
+
+.gallery-zoom {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  border: 1px solid rgba(196,154,60,0.4);
+  padding: 10px 20px;
+}
+
+/* Instagram banner */
+.gallery-ig-banner {
+  margin-top: 40px;
+  padding: 0 80px;
+  text-align: center;
+}
+
+.gallery-ig-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--white-dim);
+  letter-spacing: 1px;
+}
+
+.ig-link {
+  color: var(--gold-bright);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.ig-link:hover { color: var(--white); }
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(6,6,8,0.95);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+}
+
+.lightbox-close {
+  position: absolute; top: 28px; right: 36px;
+  font-size: 22px; color: var(--white-dim);
+  background: none; border: none;
+  cursor: pointer; transition: color 0.2s;
+  font-family: sans-serif;
+}
+.lightbox-close:hover { color: var(--gold-bright); }
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item { height: 200px; }
+  .gallery-header { padding: 0 28px 40px; }
+  .gallery-ig-banner { padding: 0 28px; }
+}
